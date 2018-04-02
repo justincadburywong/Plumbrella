@@ -1,9 +1,9 @@
 # aka Register
-get '/users/new' do
+get '/signup' do
   erb :'users/new'
 end
 
-post '/users/new' do
+post '/signup' do
   @user = User.new(username: params[:username], password: params[:password])
   if @user.save
     # this will auto log in the user after creating an account
@@ -17,7 +17,7 @@ post '/users/new' do
 end
 
 #aka Profile page
-get '/users/:id' do
+get '/account/:id' do
   @user = User.find(params[:id])
   erb :'users/show'
 end
