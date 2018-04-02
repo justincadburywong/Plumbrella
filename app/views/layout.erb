@@ -1,51 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-  <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
-  <meta name="viewport" content="width=device-width" />
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+    <meta name="viewport" content="width=device-width" />
 
 
-  <!--
-    normalize.css removes cross-browser differences in defaults, e.g.,
-    differences in how form elements appear between Firefox and IE
-    See: http://necolas.github.com/normalize.css/
-  -->
-  <link rel="stylesheet" href="/css/normalize.css">
+    <!--
+      normalize.css removes cross-browser differences in defaults, e.g.,
+      differences in how form elements appear between Firefox and IE
+      See: http://necolas.github.com/normalize.css/
+    -->
+    <link rel="stylesheet" href="/css/normalize.css">
 
-  <!-- <link rel="icon" type="image/png" href="public/favicon.ico"> -->
-  <!-- <link rel="shortcut icon" href="favicon.ico"/> -->
+    <!-- <link rel="icon" type="image/png" href="public/favicon.ico"> -->
+    <!-- <link rel="shortcut icon" href="favicon.ico"/> -->
 
-  <link href="/css/bootstrap.min.css" rel="stylesheet" />
-  <link href="/css/hipster_cards.css" rel="stylesheet"/>
-  <!-- <link href="/css/application.css" rel="stylesheet"/> -->
+    <link href="/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="/css/hipster_cards.css" rel="stylesheet"/>
+    <!-- <link href="/css/application.css" rel="stylesheet"/> -->
 
-  <!--     Fonts and icons     -->
-  <link href="/css/pe-icon-7-stroke.css" rel="stylesheet" />
-  <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" />
-  <link href='http://fonts.googleapis.com/css?family=Playfair+Display|Raleway:700,100,400|Roboto:400,700|Playfair+Display+SC:400,700' rel='stylesheet' type='text/css'>
+    <!--     Fonts and icons     -->
+    <link href="/css/pe-icon-7-stroke.css" rel="stylesheet" />
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" />
+    <link href='http://fonts.googleapis.com/css?family=Playfair+Display|Raleway:700,100,400|Roboto:400,700|Playfair+Display+SC:400,700' rel='stylesheet' type='text/css'>
 
-  <style>
-      .card{
-          margin-bottom: 70px;
-      }
-  </style>
+    <style>
+        .card{
+            margin-bottom: 70px;
+        }
+    </style>
 
-  <title>Plumbrella</title>
-</head>
-<body class="vsc-initialized">
-
+    <title>Plumbrella</title>
+  </head>
+  <body>
     <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-      <a class="navbar-brand" href="#">Fixed navbar</a>
+      <!-- <a class="navbar-brand" href="#">Fixed navbar</a> -->
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarCollapse">
         <ul class="navbar-nav mr-auto">
+          <!--  if current user, show 'start slideshow', login, etc -->
           <li class="nav-item active">
             <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
           </li>
+
           <li class="nav-item">
             <a class="nav-link" href="#">Link</a>
           </li>
@@ -60,31 +61,31 @@
       </div>
     </nav>
 
- <%= yield %>
+   <%= yield %>
 
-  <!-- <script src="/js/application.js"></script> -->
-  <script src="/js/jquery-1.10.2.js" type="text/javascript"></script>
-  <script src="/js/bootstrap.min.js" type="text/javascript"></script>
-  <script src="/js/hipster-cards.js"></script>
+    <!-- <script src="/js/application.js"></script> -->
+    <script src="/js/jquery-1.10.2.js" type="text/javascript"></script>
+    <script src="/js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="/js/hipster-cards.js"></script>
 
-  <!--  Just for demo	 -->
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/masonry/3.3.1/masonry.pkgd.min.js"></script>
+    <!--  Just for demo	 -->
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/masonry/3.3.1/masonry.pkgd.min.js"></script>
 
-  <script>
-     $().ready(function(){
+    <script>
+       $().ready(function(){
          var $container = $('.masonry-container');
-           doc_width = $(document).width();
-           if (doc_width >= 768){
-               $container.masonry({
-                   itemSelector        : '.card-box',
-                   columnWidth         : '.card-box',
-                   transitionDuration  : 0
-               });
-           } else {
-               $('.mas-container').removeClass('mas-container').addClass('row');
-           }
-     });
-  </script>
+         doc_width = $(document).width();
+         if (doc_width >= 768){
+           $container.masonry({
+             itemSelector        : '.card-box',
+             columnWidth         : '.card-box',
+             transitionDuration  : 0
+           });
+         } else {
+           $('.mas-container').removeClass('mas-container').addClass('row');
+         }
+       });
+    </script>
 
-</body>
+  </body>
 </html>
