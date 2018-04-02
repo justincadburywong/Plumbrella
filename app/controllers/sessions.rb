@@ -1,9 +1,9 @@
 # aka "Login"
-get '/sessions/new' do
+get '/login' do
   erb :'sessions/new'
 end
 
-post '/sessions/new' do
+post '/login' do
   #find user based on email address
   @user = User.find_by(username: params[:username])
   #validate user based on valid password
@@ -19,7 +19,7 @@ post '/sessions/new' do
   end
 end
 
-get '/sessions/delete' do
+get '/logout' do
   session[:id] = nil
   current_user = nil
   redirect '/'
