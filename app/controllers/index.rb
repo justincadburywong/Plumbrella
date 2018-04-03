@@ -2,6 +2,6 @@ get '/' do
   if current_user
     erb :'index'
   else
-    redirect '/sessions/new'
+    redirect '/login'
   end
 end

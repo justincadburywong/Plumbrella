@@ -10,12 +10,13 @@ post '/login' do
   #if it does
   #&& is checking if user is not nill !!
   if @user
-    if @user.password == params[:password]
+    p @user
+    if @user.authenticate(params[:password])
       #set the user-id to session
       session[:id] = @user.id
       redirect '/'
     else
-      @error = "Your password or email was incorrect"
+      @error = "Your email or password was incorrect"
       erb :'/sessions/new'
     end
   else
