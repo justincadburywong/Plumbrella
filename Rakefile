@@ -49,7 +49,7 @@ namespace :generate do
     puts "Creating #{path}"
     File.open(path, 'w+') do |f|
       f.write(<<-EOF.strip_heredoc)
-        class #{name} < ActiveRecord::Migration
+        class #{name} < ActiveRecord::Migration[5.1]
           def change
           end
         end
@@ -110,7 +110,7 @@ namespace :db do
 
   desc "Drop, create, and migrate the database at #{DB_NAME}"
   task :reset => [:drop, :create, :migrate]
-  
+
   desc "Populate the database with dummy data by running db/seeds.rb"
   task :seed do
     require APP_ROOT.join('db', 'seeds.rb')

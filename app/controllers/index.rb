@@ -1,7 +1,7 @@
 get '/' do
-  # if current_user
+  if current_user
     erb :'index'
-  # else
-    # redirect '/sessions/new'
-  # end
+  else
+    redirect '/login'
+  end
 end
