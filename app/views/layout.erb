@@ -29,16 +29,21 @@
             <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
           </li>
           <!--  if !current user, show 'start slideshow', login, etc -->
-          <li class="nav-item">
-            <a class="nav-link" href="/login">Login</a>
-          </li>
-          <!-- else -->
-          <li class="nav-item">
-            <a class="nav-link" href="#">Slideshow</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Logout</a>
-          </li>
+          <% if !current_user %>
+            <li class="nav-item">
+              <a class="nav-link" href="/login">Login</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/signup">Signup</a>
+            </li>
+          <% else %>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Slideshow</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Logout</a>
+            </li>
+          <% end %>
         </ul>
         <form class="form-inline mt-2 mt-md-0">
           <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
