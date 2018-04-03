@@ -6,31 +6,14 @@
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
     <meta name="viewport" content="width=device-width" />
 
-
     <!--
       normalize.css removes cross-browser differences in defaults, e.g.,
       differences in how form elements appear between Firefox and IE
       See: http://necolas.github.com/normalize.css/
     -->
-    <link rel="stylesheet" href="/css/normalize.css">
-
-    <!-- <link rel="icon" type="image/png" href="public/favicon.ico"> -->
-    <!-- <link rel="shortcut icon" href="favicon.ico"/> -->
-
+    <link href="/css/normalize.css" rel="stylesheet" />
     <link href="/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="/css/hipster_cards.css" rel="stylesheet"/>
-    <!-- <link href="/css/application.css" rel="stylesheet"/> -->
-
-    <!--     Fonts and icons     -->
-    <link href="/css/pe-icon-7-stroke.css" rel="stylesheet" />
-    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" />
-    <link href='http://fonts.googleapis.com/css?family=Playfair+Display|Raleway:700,100,400|Roboto:400,700|Playfair+Display+SC:400,700' rel='stylesheet' type='text/css'>
-
-    <style>
-        .card{
-            margin-bottom: 70px;
-        }
-    </style>
+    <link href="/css/application.css" rel="stylesheet" />
 
     <title>Plumbrella</title>
   </head>
@@ -42,16 +25,19 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarCollapse">
         <ul class="navbar-nav mr-auto">
-          <!--  if current user, show 'start slideshow', login, etc -->
           <li class="nav-item active">
-            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
           </li>
-
+          <!--  if !current user, show 'start slideshow', login, etc -->
           <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
+            <a class="nav-link" href="/login">Login</a>
+          </li>
+          <!-- else -->
+          <li class="nav-item">
+            <a class="nav-link" href="#">Slideshow</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link disabled" href="#">Disabled</a>
+            <a class="nav-link" href="#">Logout</a>
           </li>
         </ul>
         <form class="form-inline mt-2 mt-md-0">
@@ -64,28 +50,10 @@
    <%= yield %>
 
     <!-- <script src="/js/application.js"></script> -->
-    <script src="/js/jquery-1.10.2.js" type="text/javascript"></script>
+
+    <script src="/js/jquery-3.2.1.slim.min.js" type="text/javascript"></script>
+    <script src="/js/popper.min.js" type="text/javascript"></script>
     <script src="/js/bootstrap.min.js" type="text/javascript"></script>
-    <script src="/js/hipster-cards.js"></script>
-
-    <!--  Just for demo	 -->
-     <script src="https://cdnjs.cloudflare.com/ajax/libs/masonry/3.3.1/masonry.pkgd.min.js"></script>
-
-    <script>
-       $().ready(function(){
-         var $container = $('.masonry-container');
-         doc_width = $(document).width();
-         if (doc_width >= 768){
-           $container.masonry({
-             itemSelector        : '.card-box',
-             columnWidth         : '.card-box',
-             transitionDuration  : 0
-           });
-         } else {
-           $('.mas-container').removeClass('mas-container').addClass('row');
-         }
-       });
-    </script>
 
   </body>
 </html>
