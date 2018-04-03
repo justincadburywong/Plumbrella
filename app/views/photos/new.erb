@@ -1,0 +1,9 @@
+<div class="container">
+  <div class="jumbotron text-center" ondrop="dropHandler(event);" ondragover="dragOverHandler(event);">
+    <h2>Drag one or more files to this Drop Zone or use button below</h2>
+    <form class="form" action="/upload", method = "post", enctype = "multipart/form-data">
+      <input type="file" name="img" multiple>
+      <input type="submit">
+    </form>
+  </div>
+</div>
